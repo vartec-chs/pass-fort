@@ -1,0 +1,68 @@
+{
+	"$schema": "../gen/schemas/desktop-schema.json",
+	"identifier": "default",
+	"description": "Capability for the main window",
+	"windows": ["main", "password-generator"],
+	"permissions": [
+		"core:default",
+		"opener:default",
+		"clipboard-manager:default",
+		"log:default",
+		"process:default",
+
+		"dialog:default",
+		"dialog:allow-open",
+		"dialog:allow-save",
+		"dialog:allow-message",
+
+		"core:app:allow-app-show",
+		"core:app:allow-app-hide",
+		"core:app:allow-set-app-theme",
+
+		"core:path:allow-resolve",
+		"core:path:allow-resolve-directory",
+		"core:path:allow-basename",
+
+		"core:path:allow-join",
+		"core:path:default",
+		"core:path:allow-extname",
+		"core:path:allow-dirname",
+
+		"fs:default",
+
+		"fs:allow-read",
+		"fs:allow-write",
+		"fs:allow-app-read",
+		"fs:allow-app-write",
+		"fs:allow-read-dir",
+		"fs:allow-remove",
+
+		"store:default",
+		"store:allow-save",
+		"store:allow-clear",
+		"store:allow-set",
+		"store:allow-load",
+
+		"core:window:allow-start-dragging",
+		"core:window:allow-hide",
+		"core:window:allow-show",
+		"core:window:allow-minimize",
+		"core:window:allow-maximize",
+		"core:window:allow-close",
+		"core:window:allow-toggle-maximize",
+		"core:window:allow-is-resizable",
+		"core:window:allow-set-focus",
+		"core:window:allow-center",
+		"core:window:allow-inner-size",
+		"core:window:allow-outer-size",
+		"core:window:allow-set-size",
+		"core:window:allow-set-fullscreen",
+		"core:window:allow-set-position",
+
+		"core:webview:default",
+		"core:webview:allow-create-webview-window",
+
+		"core:webview:allow-create-webview",
+		"core:webview:allow-webview-close"
+	]
+}
