@@ -34,6 +34,7 @@ export const AppBar: FC = () => {
 	const navigate = useNavigate()
 
 	const isDashboard = pathname.includes(PATHS.DASHBOARD.ROOT)
+	const isPasswordGenerator = pathname.includes(PATHS.PASSWORD_GENERATOR)
 	const isHome = pathname === PATHS.HOME
 
 	const appWindowRef = useRef(getCurrentWindow())
@@ -106,7 +107,7 @@ export const AppBar: FC = () => {
 			</Stack>
 
 			<Stack direction='row' gap={1}>
-				{!isHome && !isDashboard && (
+				{!isHome && !isDashboard && !isPasswordGenerator && (
 					<>
 						<Tooltip title='Главная'>
 							<IconButton size='small' sx={{ color: theme.palette.text.primary }} onClick={home}>
@@ -140,11 +141,11 @@ export const AppBar: FC = () => {
 					</IconButton>
 				</Tooltip>
 
-				<Tooltip title={!isFullscreen ? 'На весь экран' : 'Возвращается в обычное расположение'}>
+				{!isPasswordGenerator && <Tooltip title={!isFullscreen ? 'На весь экран' : 'Возвращается в обычное расположение'}>
 					<IconButton onClick={toggleFullscreen} size='small'>
 						{!isFullscreen ? <Maximize size={16} /> : <Minimize size={16} />}
 					</IconButton>
-				</Tooltip>
+				</Tooltip>}
 
 				<Tooltip title='Закрыть'>
 					<IconButton

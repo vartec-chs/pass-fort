@@ -16,7 +16,7 @@
 		"^@react-router/(.*)$",
 		"react-router-dom",
 		"@tanstack/react-query",
-		"@tauri-apps/api/(.*)$",
+		"@tauri-apps/(.*)$",
 		"@mui/(.*)$",
 
 		"lucide-react",
@@ -31,9 +31,10 @@
 
 		"^@components/(.*)$",
 		"^@screens/(.*)$",
-		"^@providers/(.*)$",
-		"^@hooks/(.*)$",
-		"^@api/(.*)$",
+		"@providers/(.*)$",
+		"@hooks/(.*)$",
+		"@hooks$",
+		"@api/(.*)$",
 		"^@zod-schemas/(.*)$",
 		"^@states/(.*)$",
 		"^@ts/(.*)$",

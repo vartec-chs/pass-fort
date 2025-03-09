@@ -1,28 +1,23 @@
-import { useEffect, type FC } from 'react'
+import { type FC } from 'react'
 
 import { emit } from '@tauri-apps/api/event'
 
-import { Button, Stack, Typography } from '@mui/material'
+import { Stack, Typography } from '@mui/material'
 
-const sendPassword = async () => {
-	await emit('new_pass', 'SuperSecret123!')
+import { PasswordGeneratorForm } from '@components/forms/password-generator-form'
+
+const sendPassword = async (password: string) => {
+	await emit('new_pass', password)
 }
 
 export const PasswordGeneratorScreen: FC = () => {
-
-	useEffect(() => {
-    console.log("✅ PasswordGeneratorScreen загружен!");
-    console.log("📍 URL: ", window.location.href);
-  }, []);
 	return (
-		<Stack>
-			<Typography variant='h4' fontWeight={600}>
+		<Stack p={2} component='section' gap={2} height={'100%'}>
+			<Typography component='h1' textAlign={'center'} variant='h4' fontWeight={600}>
 				Генератор паролей
 			</Typography>
 
-			<Button onClick={sendPassword} variant='contained' size='large'>
-				Сгенерировать
-			</Button>
+			<PasswordGeneratorForm onPasswordGenerate={sendPassword} />
 		</Stack>
 	)
 }
